@@ -107,10 +107,10 @@ checkInstall <- function(pkg){
                  " now?",
                  sep = "")
     cat(msg)    
-    if(interactive()) {
+#     if(interactive()) {
       bioc <- c("affy", "logicFS", "gpls", "vbmp")
-      installChoice <- menu(c("yes", "no"))
-      if(installChoice == 1){
+#       installChoice <- menu(c("yes", "no"))
+#       if(installChoice == 1){
         hasBioc <- any(pkg[!good] %in% bioc)
         if(!hasBioc) {
           install.packages(pkg[!good])
@@ -123,8 +123,8 @@ checkInstall <- function(pkg){
           source("http://bioconductor.org/biocLite.R")
           biocLite(instB)
         }
-      } else stop("Required package is missing", call. = FALSE)
-    } else stop("Required package is missing", call. = FALSE)
+#       } else stop("Required package is missing", call. = FALSE)
+#     } else stop("Required package is missing", call. = FALSE)
   }
 }
 
